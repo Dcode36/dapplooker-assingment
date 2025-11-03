@@ -1,5 +1,6 @@
 const coingeckoService = require('../services/coingecko.service');
 const aiService = require('../services/ai.service');
+const TokenInsight = require('../model/tokenInsight.model');
 
 const tokenController = {
     fetchTokenData: async (req, res) => {
@@ -51,6 +52,13 @@ const tokenController = {
                 insight: aiResult.insight,
                 model: aiResult.model
             };
+
+            // Save to MongoDB
+            try {
+                await TokenInsight.create(response);
+            } catch (dbError) {
+                console.error('Failed to save to database:', dbError.message);
+            }
 
             res.status(200).json(response);
         } catch (error) {

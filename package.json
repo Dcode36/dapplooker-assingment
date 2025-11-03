@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "node tests/runAll.test.js",
+    "test:token": "node tests/token.test.js",
+    "test:hyperliquid": "node tests/hyperliquid.test.js"
   },
   "keywords": [],
   "author": "",
