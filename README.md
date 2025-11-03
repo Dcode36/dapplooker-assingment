@@ -237,38 +237,6 @@ Stores all token insight API results.
 ### `hyperliquidpnls`
 Stores all HyperLiquid PnL calculations.
 
----
-
-## 🗂️ Project Structure
-
-```
-dapplooker/
-├── config/
-│   └── db.config.js
-├── controller/
-│   ├── token.controller.js
-│   └── hyperliquid.controller.js
-├── model/
-│   ├── tokenInsight.model.js
-│   └── hyperliquid.model.js
-├── routes/
-│   ├── token.routes.js
-│   └── hyperliquid.routes.js
-├── services/
-│   ├── coingecko.service.js
-│   ├── ai.service.js
-│   ├── hyperliquid.service.js
-│   └── pnl.service.js
-├── tests/
-│   ├── token.test.js
-│   ├── hyperliquid.test.js
-│   └── runAll.test.js
-├── server.js
-├── package.json
-└── .env
-```
-
----
 
 ## ✅ Test Coverage
 
@@ -308,17 +276,6 @@ dapplooker/
 - Token Insight API uses Google Gemini for AI analysis
 - HyperLiquid PnL supports up to 90-day date ranges
 - All monetary values are in USD
-
----
-
-## 📮 Postman Collection
-
-Import the `postman_collection.json` file into Postman to test all APIs.
-
-**Includes:**
-- ✅ Token Insight API examples (Bitcoin, Ethereum, Chainlink)
-- ✅ HyperLiquid PnL API examples (various date ranges)
-- ✅ Error test cases (invalid inputs)
 
 ---
 
@@ -380,44 +337,7 @@ dapplooker/
 └── package.json              # Dependencies
 ```
 
----
 
-## 🚢 Deployment
-
-### Docker Hub (Example)
-```bash
-# Build image
-docker build -t yourusername/dapplooker:latest .
-
-# Push to Docker Hub
-docker push yourusername/dapplooker:latest
-
-# Run from Docker Hub
-docker pull yourusername/dapplooker:latest
-docker-compose up -d
-```
-
-### Environment Variables for Production
-```env
-NODE_ENV=production
-PORT=3000
-MONGO_URI=mongodb://admin:password123@mongodb:27017/dapplooker?authSource=admin
-GEMINI_API_KEY=your_production_key_here
-GEMINI_MODEL=gemini-2.0-flash-exp
-```
-
----
-
-## 🔒 Security Notes
-
-- ✅ Never commit `.env` file
-- ✅ Rotate API keys regularly
-- ✅ Use strong MongoDB passwords in production
-- ✅ Enable MongoDB authentication
-- ✅ Use HTTPS in production
-- ✅ Implement rate limiting for APIs
-
----
 
 ## 👤 Author
 
